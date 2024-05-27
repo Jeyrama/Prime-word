@@ -15,3 +15,6 @@ Example:
     After adding 30 the values will be: 99 139 139 127
     As 139 is prime number so "Emma" is a Prime Word.
 */
+
+
+// Solution
