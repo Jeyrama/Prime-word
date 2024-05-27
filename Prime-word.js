@@ -20,13 +20,10 @@ Example:
 // Solution
 
 const isPrimeNumber = num => {
-
   for (let i = 2; i * i <= num; i++)
     if (num % i === 0)
       return false;
-
   return true;
-
 };
 
 const isPrimeWord = (word, add = 0) => 
@@ -36,3 +33,21 @@ const primeWord = arr =>
   arr.map(([ name, add ]) => +isPrimeWord(name, add));
 
 // or
+
+function primeWord(arr){
+  return arr.map(([str, value]) => 
+              str.split("")
+                 .map(e => e.charCodeAt(0))
+                 .map(e => e + value)
+                 .some(e => isPrime(e)))
+            .map(Number);
+}
+
+function isPrime(n) {
+  if (n <= 3) return n > 1;
+  if ((n % 2 === 0) || (n % 3 === 0)) return false;
+  for (let c = 5; c <= Math.sqrt(n); c += 6) {
+    if (n % c === 0 || n % (c + 2) === 0) return false;
+  }
+  return true;
+}
