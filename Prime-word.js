@@ -34,3 +34,5 @@ const isPrimeWord = (word, add = 0) =>
 
 const primeWord = arr =>
   arr.map(([ name, add ]) => +isPrimeWord(name, add));
+
+// or
